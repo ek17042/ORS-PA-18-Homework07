@@ -18,13 +18,51 @@
 ===================================================
 """
 
-# Write your function here
 
+def nr_of_app_in_list(lista):
+
+    d = {}
+    length = len(lista)
+    nr_of_app = 0
+
+    for i in range(length):
+
+        if lista[i] not in d:
+
+            for number in range(i, length):
+                if lista[number] == lista[i]:
+
+                    nr_of_app += 1
+
+                given_number = lista[i]
+
+                d[given_number] = nr_of_app
+        nr_of_app = 0
+
+    sequence = []
+
+    for key in d:
+
+        sequence.append(d[key])
+    maximum = sequence[0]
+
+    for i in range(len(sequence)):
+        if sequence[i] > maximum:
+            maximum = sequence[i]
+
+    for key in d:
+        if maximum == d[key]:
+            return key
 
 
 def main():
-    # Test your function here
+
+    lista = [3, 3, 2, 3, 6, 3, 3, 8, 3, 0, 9, 1, 2, 3, 3]
+    x = nr_of_app_in_list(lista)
+
+    print("In the given list number that appears the most is : " + str(x))
     pass
 
+
 if __name__ == "__main__":
-main()
+    main()
