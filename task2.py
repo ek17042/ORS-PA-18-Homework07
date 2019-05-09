@@ -13,13 +13,21 @@
 ===================================================
 """
 
-# Write your function here
 
+def suma(list):
+    length = len(list)
+
+    if length == 1:
+        return list[0]
+    else:
+        return sum(list[1:]) + list[0]
 
 
 def main():
-    # Test your function here
+    list = [7, 13, 6, 7, 1, 3]
+    print("The sum of the list elements is: " + str(suma(list)))
     pass
 
+
 if __name__ == "__main__":
-main()
+    main()
