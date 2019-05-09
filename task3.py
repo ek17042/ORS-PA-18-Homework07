@@ -12,14 +12,34 @@
 * Use main() function to test your solution.
 ===================================================
 """
+import random
 
-# Write your function here
 
+def funk(lnum):
+    a = []
+    while len(lnum) >= 1:
+        minimum = lnum[0]
+        for el in lnum:
+            if el < minimum:
+                minimum = el
+
+        a.append(minimum)
+        lnum.remove(minimum)
+
+    return a
 
 
 def main():
-    # Test your function here
+    lnum = []
+    for i in range(0, 1000):
+        lnum.append(random.randint(0, 1000))
+    result = funk(lnum)
+    print(result)
     pass
 
+
 if __name__ == "__main__":
-main()
+    main()
+
+
+
